@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS clients(
 
 CREATE TABLE IF NOT EXISTS dup_clients(
 
+	id				INT				NOT NULL	AUTO_INCREMENT,
 	userAgent		VARCHAR(200),	
 	product			VARCHAR(20),		
 	productSub		VARCHAR(20),		
@@ -53,20 +54,7 @@ CREATE TABLE IF NOT EXISTS dup_clients(
     plugins			TEXT,
     mimeTypes		TEXT,
     device			VARCHAR(10),
-	ckey 			VARCHAR(200)
+	ckey 			VARCHAR(200),
+    
+    PRIMARY KEY(id)
 );
-
-SELECT *
-FROM dup_clients AS dc 
-WHERE dc.ckey = '6684efbfd5976b1467f695dd3aba1538';
-
-/*INSERT INTO clients (userAgent,product,productSub,cookieEnabled,
-					 vendor,platform,language,languages,
-					 javaEnabled, appName, appCodeName,appVersion,
-					 oscpu,maxTouchPoints,colorDepth,pixelDepth,
-					 width,height,id) VALUES  
-                     ("google chrome linux","gecko", "20150345", true,
-					  "Google Inc.","Linux x86_64","pt_BR", "pt_BR,en_US",
-					  true,"chrome geko","Mozilla","39",
-					  "x64",0,54,54,1923,730,"x2c34r32dser3bf4");
-*/
