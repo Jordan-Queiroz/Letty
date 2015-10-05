@@ -3,19 +3,29 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>Fingerprinting</title>
+		<title>Letty</title>
 		<script src="jQuery/jquery-1.11.3.min.js"></script>
+
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 
 	<body>
 		<script src="CryptoJS/rollups/md5.js"></script>
 
-		<h1>Web Fingerprinting</h1>
+		<h1>Letty: A Web Fingerprinting implementation</h1>
+		<h3 id="h2">Hi, I'm Letty ;)</h3>
+		<h3>I've got some informations about your browser. Don't you worry, it is only for academic purposes.</h3>
+		<h3>You can see these informations right below in the table.</h3>
 
-		<table border="1">
+		<table class="table table-striped">
 			<tr>
-				<th>Objeto</th>
-				<th>Valor</th>
+				<th>Attribute</th>
+				<th>Content</th>
 			</tr>
 			<tr>
 				<td>User Agent</td>
@@ -109,7 +119,7 @@
 			</tr>
 		</tabe>
 
-		<img id="image" src="" />
+		<!-- <img id="image" src="" /> -->
 
 		<script src="letty.js"></script>
 	</body>

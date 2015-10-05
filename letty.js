@@ -186,20 +186,6 @@ function showData(attributes, key) {
 			   'ac', 'av', 'os', 'mtp', 'cd', 'pd', 'width', 'height', 'plugs', 'mime', 'dev', 'key'];
 
 
-	if (attributes[20] == "desktop") {
-		image = document.getElementById("image");
-		image.setAttribute("src", "images/ferrari_grande.jpg");
-		image.setAttribute("width", "1170");
-		image.setAttribute("height", "877");
-		image.setAttribute("alt", "488 GTB");
-	} else {
-		image = document.getElementById("image");
-		image.setAttribute("src", "images/ferrari_pequena.png");
-		image.setAttribute("width", "256");
-		image.setAttribute("height", "256");
-		image.setAttribute("alt", "360 Modena");
-	}
-
 	for(data in attributes) {
 		document.getElementById(ids[data]).innerHTML = attributes[data];
 	}
