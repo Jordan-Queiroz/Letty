@@ -16,7 +16,9 @@
 		* Split are based on the following patterns: "*," and "`".
 */
 
-doFingerPrinting();
+var button =  document.getElementById("participate");
+button.onclick = function(){ doFingerPrinting(); } 
+//doFingerPrinting();
 
 // Main function which is reponsible to do the fingerprinting.
 function doFingerPrinting() {
@@ -143,6 +145,8 @@ function verifyDevice(screenWidth, attributes, key) {
 	}
 
 	saveData(makeJson(attributes, key));
+	document.getElementById("hidden").style.visibility = "visible";
+	document.getElementById("participate").disabled = true;
 	showData(attributes, key);
 }
 
@@ -226,7 +230,7 @@ function makeJson(attributes, key) {
 
 	jsonString = JSON.stringify(attributesJson);
 
-	console.log(jsonString);
+//	console.log(jsonString);
 
 	return jsonString;
 }

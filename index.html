@@ -5,6 +5,8 @@
 		<meta charset="UTF-8">
 		<title>Letty</title>
 		<script src="jQuery/jquery-1.11.3.min.js"></script>
+		<script src="CryptoJS/rollups/md5.js"></script>
+		
 
 		<!-- Bootstrap -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -15,13 +17,16 @@
 	</head>
 
 	<body>
-		<script src="CryptoJS/rollups/md5.js"></script>
 
-		<h1>Letty: A Web Fingerprinting implementation</h1>
-		<h3 id="h2">Hi, I'm Letty ;)</h3>
-		<h3>I've got some informations about your browser. Don't you worry, it is only for academic purposes.</h3>
-		<h3>You can see these informations right below in the table.</h3>
-
+		<h1>Letty: LET me idenTify You</h1>
+		<p class="text">Olá, estamos fazendo uma pesquisa sobre Website Fingerprinting*. Fingerprinting são técnicas empregadas para identificar (ou reidentificar) um usuário ou um dispositivo através de um conjunto de atributos (tamanho da tela do dispositivo, versões de softwares instalados, entre muitos outros) e outras características observáveis durante o processo de comunicação. </p>
+		<p class="text">Precisamos realizar alguns experimentos com o objetivo de obter resultados e usá-los para a submissão de um artigo. Se você puder participar dos experimentos ficaremos muito agradecidos.</p>
+		<p class="text">Como participar? É fácil (e rápido). Basta clicar no botão “participar” e pronto (sim, só isso). Você vai estar nos ajudando muito.</p>
+		<p class="text">O experimento consiste em obter algumas características do seu dispositivo (computador, celular, smartTV, smartwatch, etc) e do navegador web (Firefox, Chrome, Safari, etc) usado para acessar esta página. Todas as características obtidas serão usadas apenas como resultados para fins acadêmicos. Nenhum dado coletado é sensível e você poderá ver quais dados foram coletados (apenas do seu dispositivo, claro).</p>
+		<p class="text">Desde já agradecemos.</p>
+		<button type="button" class="btn btn-success" id="participate">Participar</button>
+		<br>
+		<p id="hidden">Essas foram as características coletadas do seu dispositivo e navegador:</p>
 		<table class="table table-striped">
 			<tr>
 				<th>Attribute</th>
@@ -119,9 +124,9 @@
 			</tr>
 		</tabe>
 
-		<!-- <img id="image" src="" /> -->
-
 		<script src="letty.js"></script>
+		<p class="sub">* Para informações sobre Website Fingerprinting, <a href="http://www.lbd.dcc.ufmg.br/colecoes/sbseg/2014/0035.pdf" target="_blank">Clique aqui</a></p>
+ 
 	</body>
 
 </html>

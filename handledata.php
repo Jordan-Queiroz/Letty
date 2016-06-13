@@ -77,13 +77,13 @@
 	$result = mysql_query($query_clients, $connection);
 	
 	if ($result) {
-		echo "Your data were recorded.";
+		echo "Obrigado pela sua colaboração para o nosso experimento. Sua participação é muito importante.";
 	} else {
 		$result = mysql_query($query_dup_clients, $connection);
 		if ($result) {
-			echo "Your data were recorded (duplicated).";
+			echo "Obrigado pela sua colaboração para o nosso experimento. Sua participação é muito importante (parece que você já participou antes).";
 		} else {
-			echo "Something wrong occured while trying to record your data.";
+			echo "Oops, algo durante a sua participação deu errado";
 		}
 	}
 

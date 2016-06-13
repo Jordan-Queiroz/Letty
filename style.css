@@ -5,7 +5,30 @@ body {
     padding: 10px;
 }
 
-h1,h3 {
+h1 {
 	text-align: center;
 	color: #A020F0;
+}
+
+p {
+	text-align: justify;
+	color: #A020F0;
+}
+
+button {
+	text-align: center;
+
+}
+
+#hidden {
+	visibility: hidden;
+	font-size: 18px;
+}
+
+.text {
+	font-size: 18px;
+}
+
+.sub {
+	font-size: 12px;
 }
