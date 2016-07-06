@@ -8,19 +8,19 @@
 	$attributesDecoded = json_decode($attributes, true); 
 
 	# Oppening connection with the database.
-	$connection = mysql_connect("localhost", "root", "root");
+	$connection = mysqli_connect("localhost", "root", "root");
 	if (!$connection) {
 		die("<p>The database server is not available</p>" .
-		"<p>Error code: " . mysql_connect_errno() .
-		": " . mysql_connect_error() . "</p>");
+		"<p>Error code: " . mysqli_connect_errno() .
+		": " . mysqli_connect_error() . "</p>");
 	}
 
 	# Selecting a database.
-	$database  = mysql_select_db("devices", $connection);
+	$database  = mysqli_select_db($connection, "devices");
 	if (!$database) {
 		die("<p>It was not possible to select the database</p>" .
-		"<p>Error code: " . mysql_errno($connection) .
-		": " . mysql_error($connection) . "<br />");
+		"<p>Error code: " . mysqli_errno($connection) .
+		": " . mysqli_error($connection) . "<br />");
 	}
 
 	# Getting attributes from JSON Object.
@@ -74,12 +74,12 @@
 								   		   	   	   '$device', '$key')";
 
 
-	$result = mysql_query($query_clients, $connection);
+	$result = mysqli_query($connection, $query_clients);
 	
 	if ($result) {
 		echo "Obrigado pela sua colaboração para o nosso experimento. Sua participação é muito importante.";
 	} else {
-		$result = mysql_query($query_dup_clients, $connection);
+		$result = mysqli_query($connection, $query_dup_clients);
 		if ($result) {
 			echo "Obrigado pela sua colaboração para o nosso experimento. Sua participação é muito importante (parece que você já participou antes).";
 		} else {
@@ -87,5 +87,5 @@
 		}
 	}
 
-	mysql_close($connection);
+	mysqli_close($connection);
 ?>

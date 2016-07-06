@@ -1,32 +1,32 @@
 <?php
 
 	# Oppening connection with the database.
-	$connection = mysql_connect("localhost", "root", "root");
+	$connection = mysqli_connect("localhost", "root", "root");
 	if (!$connection) {
 		die("<p>The database server is not available</p>" .
-		"<p>Error code: " . mysql_connect_errno() .
-		": " . mysql_connect_error() . "</p>");
+		"<p>Error code: " . mysqli_connect_errno() .
+		": " . mysqli_connect_error() . "</p>");
 	}
 
 	# Selecting a database.
-	$database  = mysql_select_db("devices", $connection);
+	$database  = mysqli_select_db($connection, "devices");
 	if (!$database) {
 		die("<p>It was not possible to select the database</p>" .
-		"<p>Error code: " . mysql_errno($connection) .
-		": " . mysql_error($connection) . "<br />");
+		"<p>Error code: " . mysqli_errno($connection) .
+		": " . mysqli_error($connection) . "<br />");
 	}
 
 	# Getting all students in the database.
     $query = "SELECT * FROM clients";
-    $clients = mysql_query($query);
+    $clients = mysqli_query($connection, $query);
 
-    while ($row = mysql_fetch_array($clients)) {
+    while ($row = mysqli_fetch_array($clients)) {
         # Useful for getting a specific student's homework.
         $key = $row["ckey"];
         $query = "SELECT * FROM dup_clients WHERE dup_clients.ckey = '$key'";
-        $dup_clients = mysql_query($query);
+        $dup_clients = mysqli_query($connection, $query);
 
-        while ($row_dup = mysql_fetch_array($dup_clients)) {
+        while ($row_dup = mysqli_fetch_array($dup_clients)) {
         	if($row["userAgent"] == $row_dup["userAgent"] &&
         	   $row["product"] == $row_dup["product"] &&
         	   $row["productSub"] == $row_dup["productSub"] &&
