@@ -8,7 +8,7 @@
 	$attributesDecoded = json_decode($attributes, true); 
 
 	# Oppening connection with the database.
-	$connection = mysqli_connect("localhost", "root", "root");
+	$connection = mysqli_connect("", "", "");
 	if (!$connection) {
 		die("<p>The database server is not available</p>" .
 		"<p>Error code: " . mysqli_connect_errno() .
@@ -16,7 +16,7 @@
 	}
 
 	# Selecting a database.
-	$database  = mysqli_select_db($connection, "devices");
+	$database  = mysqli_select_db($connection, "");
 	if (!$database) {
 		die("<p>It was not possible to select the database</p>" .
 		"<p>Error code: " . mysqli_errno($connection) .
