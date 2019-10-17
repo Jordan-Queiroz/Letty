@@ -183,7 +183,7 @@ function saveData(attributes) {
 // This function is used just to show the collected data on the html page.
 function showData(attributes, key) {
 
-	attributes = attributes + key + "`";
+	attributes = attributes + key;
 	var attributes = attributes.split("`");
 
 	var ids = ['ua', 'prod', 'prodsub', 'ce', 'vend', 'plat', 'lang', 'langs', 'je', 'an',
